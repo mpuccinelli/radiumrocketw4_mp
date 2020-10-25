@@ -27,7 +27,7 @@ en mayúscula (utilizar toUpperCase). */
 
 var original= 'Radium Rocket';
 var transformed = original.toUpperCase();
-console.log(transformed);
+//console.log(transformed);
 
 /* 2.b) Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string
 con los primeros 5 caracteres guardando el resultado en una nueva variable (utilizar
@@ -35,14 +35,14 @@ substring). */
 
 var long = 'Whatever people say I am that is what I am not'
 var short5 = long.substring(0,5);
-console.log(short5);
+//console.log(short5);
 
 /* 2.c) Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string
 con los últimos 3 caracteres guardando el resultado en una nueva variable (utilizar
 substring). */
 
 var short3 = long.substring(long.length-3,long.length);
-console.log(short3);
+//console.log(short3);
 
 /* 2.d) Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string
 con la primera letra en mayúscula y las demás en minúscula. Guardar el resultado en
@@ -50,7 +50,7 @@ una nueva variable (utilizar substring, toUpperCase, toLowerCase y el operador +
 
 var stringNotOk = 'stRiNg WrOnGlY wRiTtEn';
 var stringOk = stringNotOk.substring(0,1).toUpperCase() + stringNotOk.substring(1,stringNotOk.length).toLowerCase();
-console.log(stringOk);
+//console.log(stringOk);
 
 /* 2.e) Crear una variable de tipo string con al menos 10 caracteres y algún espacio en blanco.
 Encontrar la posición del primer espacio en blanco y guardarla en una variable (utilizar
@@ -58,7 +58,7 @@ indexOf). */
 
 var phrase = 'Index of first space';
 var spaceIndex = phrase.indexOf(' ');
-console.log(spaceIndex);
+//console.log(spaceIndex);
 
 /* 2.f) Crear una variable de tipo string con al menos 2 palabras largas (10 caracteres y algún
 espacio entre medio). Utilizar los métodos de los ejercicios anteriores para generar un
@@ -69,4 +69,55 @@ operador +). */
 var longWords = 'winGArdIuM lEVIosa'
 var space = longWords.indexOf(' ');
 var longWordsOk = longWords.substring(0,1).toUpperCase() + longWords.substring(1,space).toLowerCase() + ' ' + longWords.substring(space+1,space+2).toUpperCase() + longWords.substring(space+2,longWords.length).toLowerCase();
-console.log(longWordsOk);
+//console.log(longWordsOk);
+
+/* 3.a) Dado el siguiente array: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+"Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"] mostrar por
+consola los meses 5 y 11 (utilizar console.log) */
+
+var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+var months2 = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+console.log(months[4],months[10]);
+
+/* 3.b) Ordenar el array de meses alfabéticamente y mostrarlo por consola (utilizar sort). */
+
+var months = months.sort();
+console.log(months);
+
+/* 3.c) Agregar un elemento al principio y al final del array (utilizar unshift y push) */
+
+months.unshift('First Month');
+months.push('Ending Month');
+console.log(months);
+
+/* 3.d) Quitar un elemento del principio y del final del array (utilizar shift y pop) */
+
+months.shift();
+months.pop();
+console.log(months);
+
+/* 3.e) Invertir el orden del array (utilizar reverse)*/
+
+months.reverse();
+console.log(months);
+
+
+/* 3.f) Unir todos los elementos del array en un único string donde cada mes este separado
+por un guión - (utilizar join). */
+
+var monthsOneWord = months.join('-');
+console.log(monthsOneWord);
+
+/* 3.g) Crear una copia del array de meses que contenga desde Mayo hasta Noviembre
+(utilizar slice). */
+
+var monthsMayNov = months2.slice(4,11);
+console.log(monthsMayNov);
+
+
+
+
+
+
+
+
