@@ -161,7 +161,7 @@ JavaScript para mostrar una alerta utilizando cada una de las palabras. */
 var words= ['mauricio', 'mariana', 'alexis', 'agustin', 'rodrigo'];
 
 for (var i=0;i<words.length;i++){
-    alert(words[i]);
+    //alert(words[i]);
 }
 
 /* 5.b) Al array anterior convertir la primera letra de cada palabra en mayúscula y mostrar una
@@ -169,7 +169,7 @@ alerta por cada palabra modificada. */
 
 for (var i=0;i<words.length;i++){
     words[i] = words[i].substring(0,1).toUpperCase()+words[i].substring(1,words[i].length);
-    alert(words[i]);
+    //alert(words[i]);
 }
 
 /* 5.c) Crear una variable llamada “sentence” que tenga un string vacío, luego al array del
@@ -182,7 +182,7 @@ for (var i=0;i<words.length;i++){
     sentence = sentence + words[i] + ' ';
 }
 
-alert(sentence);
+//alert(sentence);
 
 /* 5.d) Crear una array vacío y con un bucle for de 10 repeticiones llenar el array con el
 número de la repetición, es decir que al final de la ejecución del bucle for deberia
@@ -194,4 +194,92 @@ var empty = [];
 for (var i=0;i<10;i++){
     empty[i] = i;
 }
-console.log(empty);
+//console.log(empty);
+
+
+/* 6.a) Crear una función suma que reciba dos valores numéricos y retorne el resultado.
+Ejecutar la función y guardar el resultado en una variable, mostrando el valor de dicha
+variable en la consola del navegador. */
+/* 6.b)  A la función suma anterior, agregarle una validación para controlar si alguno de los
+parámetros no es un número, mostrar una alerta aclarando que uno de los parámetros
+tiene error y retornar el valor NaN como resultado. */
+
+
+function addition(n1,n2){
+    if (isNaN(n1)==true || isNaN(n2)==true){
+        sum = NaN;
+        alert('One of the parameters is not a number');
+    }else{
+        sum = n1 + n2;
+    }
+    return sum;
+}
+
+console.log(addition(10,'a'));
+
+/* 6.c) Crear una función validate integer que reciba un número como parámetro y verdadero
+si es un número entero. */
+
+function validateInteger(x){
+    if (Number.isInteger(x)==true){
+        return 'Verdadero';
+    }else{
+        return 'Falso'
+    }
+}
+
+console.log(validateInteger(10));
+
+/* 6.d) A la función suma del ejercicio 6b) agregarle una llamada que valide que los números
+sean enteros. En caso que haya decimales mostrar un alerta con el error y retorna el
+número convertido a entero (redondeado). */
+
+function additionD(n1,n2){
+    if (isNaN(n1)==true || isNaN(n2)==true){
+        sum = NaN;
+        alert('One of the parameters is not a number');
+    }else{
+        if(validateInteger(n1)=='Falso'){
+            n1 = Math.round(n1);
+            alert('First number is not an integer');
+            console.log(n1);
+        }
+        if(validateInteger(n2)=='Falso'){
+            n2 = Math.round(n2);
+            alert('Second number is not an integer');
+            console.log(n2);
+        }
+        sum = n1 + n2;
+    }
+    return sum;
+}
+
+console.log(additionD(10.5,3.25));
+
+/* 6.e) Convertir la validación del ejercicio 6b) en una función separada y llamarla dentro de la
+función suma probando que todo siga funcionando igual */
+
+function roundNumber(m){
+    if(validateInteger(m)=='Falso'){
+        m = Math.round(m);
+        alert('Number is not an integer');
+        console.log(m);
+    }
+    return m;
+}
+
+
+function additionE(n1,n2){
+    if (isNaN(n1)==true || isNaN(n2)==true){
+        sum = NaN;
+        alert('One of the parameters is not a number');
+    }else{
+        n1 = roundNumber(n1);
+        n2 = roundNumber(n2);        
+        sum = n1 + n2;
+    }
+    return sum;
+}
+
+console.log(additionE(10.5,3.25));
+
