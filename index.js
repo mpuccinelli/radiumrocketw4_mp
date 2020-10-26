@@ -120,12 +120,12 @@ mayor o igual que 0,5 mostrar una alerta con el mensaje “Greater than 0,5” y
 alerta con el mensaje “Lower than 0,5” */
 
 var r = Math.random();
-
+/*
 if (r >= 0.5) {
     console.log('Greater than 0.5')
 } else {
     console.log('Lower than 0.5')
-}
+}*/
 
 /* 4.b) Crear una variable “Age” que contenga un número entero entre 0 y 100 y muestre los
 siguientes mensajes de alerta:
@@ -138,7 +138,7 @@ vi) “Adulto mayor” entre 61 y 75 años
 vii) “Anciano” si es mayor a 75 años */
 
 var age = 1;
-
+/*
 if (age<2){
     console.log('Bebe')
 } else if (age>=2 && age<=12){
@@ -153,10 +153,45 @@ if (age<2){
     console.log('Adulto mayor')
 } else if (age>75){
     console.log('Anciano')
+}*/
+
+/* 5.a) Crear un array que contenga 5 palabras y recorrer dicho array utilizando un bucle for de
+JavaScript para mostrar una alerta utilizando cada una de las palabras. */
+
+var words= ['mauricio', 'mariana', 'alexis', 'agustin', 'rodrigo'];
+
+for (var i=0;i<words.length;i++){
+    alert(words[i]);
 }
 
+/* 5.b) Al array anterior convertir la primera letra de cada palabra en mayúscula y mostrar una
+alerta por cada palabra modificada. */
 
+for (var i=0;i<words.length;i++){
+    words[i] = words[i].substring(0,1).toUpperCase()+words[i].substring(1,words[i].length);
+    alert(words[i]);
+}
 
+/* 5.c) Crear una variable llamada “sentence” que tenga un string vacío, luego al array del
+punto a) recorrerlo con un bucle for para ir guardando cada palabra dentro de la
+variable sentence. Al final mostrar una única alerta con la cadena completa. */
 
+var sentence ='';
 
+for (var i=0;i<words.length;i++){
+    sentence = sentence + words[i] + ' ';
+}
 
+alert(sentence);
+
+/* 5.d) Crear una array vacío y con un bucle for de 10 repeticiones llenar el array con el
+número de la repetición, es decir que al final de la ejecución del bucle for deberia
+haber 10 elementos dentro del array, desde el número 0 hasta al numero 9. Mostrar
+por la consola del navegador el al array final (utilizar console.log). */
+
+var empty = [];
+
+for (var i=0;i<10;i++){
+    empty[i] = i;
+}
+console.log(empty);
